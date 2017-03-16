@@ -1,9 +1,9 @@
 #include <SDL_image.h>
 #include <iostream>
 
-#include "gameWindow.h"
-#include "gameImage.h"
-#include "gameRenderer.h"
+#include "gameWindow.hpp"
+#include "gameImage.hpp"
+#include "gameRenderer.hpp"
 
 #ifdef main
 #undef main
