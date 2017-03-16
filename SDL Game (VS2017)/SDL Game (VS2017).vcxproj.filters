@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\Include\gameWindow.h">
+    <ClInclude Include="Engine\Include\gameImage.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Include\gameRenderer.h">
+    <ClInclude Include="Engine\Include\gameRenderer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Include\gameImage.h">
+    <ClInclude Include="Engine\Include\gameWindow.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

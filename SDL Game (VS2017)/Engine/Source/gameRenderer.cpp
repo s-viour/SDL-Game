@@ -1,6 +1,6 @@
-#include "gameRenderer.h"
-#include "gameWindow.h"
-#include "gameImage.h"
+#include "gameRenderer.hpp"
+#include "gameWindow.hpp"
+#include "gameImage.hpp"
 
 gameRenderer::gameRenderer(gameWindow* window)
 {

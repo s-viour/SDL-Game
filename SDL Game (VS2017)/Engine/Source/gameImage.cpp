@@ -1,7 +1,7 @@
 #include <SDL_image.h>
 #include <iostream>
-#include "gameImage.h"
-#include "gameRenderer.h"
+#include "gameImage.hpp"
+#include "gameRenderer.hpp"
 
 gameImage::gameImage(std::string path, gameRenderer* renderer)
 {
