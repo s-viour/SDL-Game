@@ -21,11 +21,15 @@
   <ItemGroup>
     <ClInclude Include="Engine\Include\gameImage.hpp" />
     <ClInclude Include="Engine\Include\gameRenderer.hpp" />
+    <ClInclude Include="Engine\Include\gameSprite.hpp" />
+    <ClInclude Include="Engine\Include\gameVector2.hpp" />
     <ClInclude Include="Engine\Include\gameWindow.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Source\gameImage.cpp" />
     <ClCompile Include="Engine\Source\gameRenderer.cpp" />
+    <ClCompile Include="Engine\Source\gameSprite.cpp" />
+    <ClCompile Include="Engine\Source\gameVector2.cpp" />
     <ClCompile Include="Engine\Source\gameWindow.cpp" />
     <ClCompile Include="Game\SDLMain.cpp" />
   </ItemGroup>

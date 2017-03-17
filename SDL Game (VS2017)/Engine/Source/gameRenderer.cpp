@@ -31,4 +31,5 @@ gameRenderer::~gameRenderer()
 {
 	SDL_DestroyRenderer(renderer);
 	renderer = NULL;
+	
 }
