@@ -1,10 +1,11 @@
 #include "gameWindow.hpp"
 
-gameWindow::gameWindow(char* name, int width, int height, bool shown)
+#include "gameVector2.hpp"
+
+gameWindow::gameWindow(char* name, gameVector2* size, bool shown)
 {
 	windowName = name;
-	windowWidth = width;
-	windowHeight = height;
+	windowSize = size;
 
 	makeWindow();
 
@@ -16,7 +17,7 @@ gameWindow::gameWindow(char* name, int width, int height, bool shown)
 
 void gameWindow::makeWindow()
 {	
-	window = SDL_CreateWindow(windowName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, windowWidth, windowHeight, SDL_WINDOW_HIDDEN);
+	window = SDL_CreateWindow(windowName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, windowSize->getX(), windowSize->getY(), SDL_WINDOW_HIDDEN);
 }
 
 void gameWindow::openWindow()
@@ -51,10 +52,9 @@ SDL_Surface* gameWindow::getWindowSurface()
 
 gameWindow::~gameWindow()
 {
-	SDL_DestroyWindow(window);
-
 	window = NULL;
 	windowName = NULL;
-	windowWidth = NULL;
-	windowHeight = NULL;
+	windowSize = NULL;
+
+	SDL_DestroyWindow(window);
 }

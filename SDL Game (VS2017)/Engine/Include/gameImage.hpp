@@ -1,15 +1,21 @@
 #pragma once
 #include <SDL.h>
-#include <string>
 
 class gameRenderer;
+class gameVector2;
 
 class gameImage
 {
 public:
-	gameImage(std::string path, gameRenderer* renderer);
+	gameImage(gameRenderer* renderer, char* path);
+
+	gameImage(gameRenderer* renderer);
 
 	SDL_Texture* getTexture();
+
+	void loadFromFile(gameRenderer* renderer, char* file);
+
+	gameVector2* getSize();
 
 	~gameImage();
 private:
