@@ -24,7 +24,6 @@
     <ClInclude Include="Engine\Include\gameWindow.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Include\gameInit.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,7 +40,6 @@
     <ClCompile Include="Game\SDLMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Source\gameInit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

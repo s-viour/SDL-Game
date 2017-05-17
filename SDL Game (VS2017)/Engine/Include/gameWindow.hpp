@@ -1,10 +1,12 @@
 #pragma once
 #include <SDL.h>
 
+class gameVector2;
+
 class gameWindow
 {
 public:
-	gameWindow(char* name, int width, int height, bool shown);
+	gameWindow(char* name, gameVector2* size, bool shown);
 
 	void makeWindow();
 
@@ -25,6 +27,5 @@ private:
 	SDL_Window* window;
 
 	char* windowName;
-	int windowWidth;
-	int windowHeight;
+	gameVector2* windowSize;
 };
