@@ -27,7 +27,7 @@
     <ClInclude Include="Engine\Include\gameVector2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Include\gameSprite.hpp">
+    <ClInclude Include="Engine\Include\gameInit.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClCompile Include="Engine\Source\gameVector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Source\gameSprite.cpp">
+    <ClCompile Include="Engine\Source\gameInit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,60 +1,15 @@
 #include <SDL_image.h>
 #include <iostream>
 
+#include "gameInit.hpp"
 #include "gameWindow.hpp"
 #include "gameImage.hpp"
 #include "gameRenderer.hpp"
 #include "gameVector2.hpp"
-#include "gameSprite.hpp"
 
 #ifdef main
 #undef main
 #endif
-
-gameVector2* winSize;
-gameWindow* window;
-gameRenderer* renderer;
-gameImage* images[4];
-gameSprite* sprite;
-
-float position;
-
-
-bool gameInit()
-{
-	bool success = true;
-
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		success = false;
-	}
-
-	if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
-	{
-		success = false;
-	}
-
-	return success;
-}
-
-void gameExit()
-{
-	SDL_Quit();
-	IMG_Quit();
-}
-
-void figurePosition()
-{
-	if (position > 1024)
-	{
-		position = 0;
-	}
-
-	else
-	{
-		position += 0.1;
-	}
-}
 
 int main(int argc, char* argv[])
 {
@@ -67,31 +22,16 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	winSize = new gameVector2(1024, 768);
+	gameWindow* window = new gameWindow("Main Window", new gameVector2(640, 512), true);
 
-	window = new gameWindow("Main Window", winSize, true);
-
-	renderer = new gameRenderer(window);
-
-	images[0] = new gameImage(renderer, "s1.png");
-	images[1] = new gameImage(renderer, "s2.png");
-	images[2] = new gameImage(renderer, "s3.png");
-	images[3] = new gameImage(renderer, "s4.png");
-
-	sprite = new gameSprite(images);
+	gameRenderer* renderer = new gameRenderer(window);
 	
-	renderer->setColor(255, 255, 255, 255);
+	renderer->setColor(0, 150, 136, 255);
 
 	while (exit != true)
 	{
 		renderer->clear();
-		sprite->render(renderer, new gameVector2(position, 0));
-		sprite->render(renderer, new gameVector2(position, 200));
-		sprite->render(renderer, new gameVector2(position, 400));
-		sprite->render(renderer, new gameVector2(position, 600));
 		renderer->update();
-
-		figurePosition();
 
 		while (SDL_PollEvent(&mainEvent))
 		{
