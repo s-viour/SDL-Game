@@ -1,6 +1,6 @@
-#include <SDL_image.h>
 #include <iostream>
 
+#include "gameInit.hpp"
 #include "gameWindow.hpp"
 #include "gameImage.hpp"
 #include "gameRenderer.hpp"
@@ -12,23 +12,6 @@
 gameWindow* window;
 gameRenderer* renderer;
 
-bool gameInit()
-{
-	bool success = true;
-
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		success = false;
-	}
-
-	return success;
-}
-
-void gameExit()
-{
-	SDL_Quit();
-	IMG_Quit();
-}
 
 int main(int argc, char* argv[])
 {
