@@ -12,7 +12,8 @@ gameImage::gameImage(gameRenderer* renderer, char* path)
 		return;
 	}
 
-	loadFromFile(renderer, path);
+	rend = renderer;
+	loadFromFile(path);
 }
 
 gameImage::gameImage(gameRenderer* renderer)
@@ -25,13 +26,13 @@ SDL_Texture* gameImage::getTexture()
 	return texture;
 }
 
-void gameImage::loadFromFile(gameRenderer* renderer, char* file)
+void gameImage::loadFromFile(char* file)
 {
 	SDL_Surface* image = IMG_Load(file);
 
 	if (image != NULL)
 	{
-		texture = SDL_CreateTextureFromSurface(renderer->getRenderer(), image);
+		texture = SDL_CreateTextureFromSurface(rend->getRenderer(), image);
 	}
 }
 
@@ -42,6 +43,11 @@ gameVector2* gameImage::getSize()
 	SDL_QueryTexture(texture, NULL, NULL, &w, &h);
 
 	return new gameVector2(w, h);
+}
+
+gameRenderer* gameImage::getRenderer()
+{
+	return rend;
 }
 
 gameImage::~gameImage()

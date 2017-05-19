@@ -50,5 +50,11 @@
     <ClCompile Include="Engine\Source\gameInit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Source\gameSprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Include\gameSprite.hpp" />
   </ItemGroup>
 </Project>

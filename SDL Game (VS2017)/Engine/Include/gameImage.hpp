@@ -13,11 +13,14 @@ public:
 
 	SDL_Texture* getTexture();
 
-	void loadFromFile(gameRenderer* renderer, char* file);
+	void loadFromFile(char* file);
 
 	gameVector2* getSize();
 
+	gameRenderer* getRenderer();
+
 	~gameImage();
 private:
+	gameRenderer* rend;
 	SDL_Texture* texture;
 };

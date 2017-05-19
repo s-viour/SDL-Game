@@ -4,6 +4,7 @@
 #include "gameInit.hpp"
 #include "gameWindow.hpp"
 #include "gameImage.hpp"
+#include "gameSprite.hpp"
 #include "gameRenderer.hpp"
 #include "gameVector2.hpp"
 
@@ -25,12 +26,19 @@ int main(int argc, char* argv[])
 	gameWindow* window = new gameWindow("Main Window", new gameVector2(640, 512), true);
 
 	gameRenderer* renderer = new gameRenderer(window);
+
+	gameImage* image = new gameImage(renderer, "./s1.png");
+
+	gameSprite* sprite = new gameSprite(image);
+	sprite->setPosition(new gameVector2(20, 20));
+	sprite->setActive();
 	
 	renderer->setColor(0, 150, 136, 255);
 
 	while (exit != true)
 	{
 		renderer->clear();
+		sprite->render();
 		renderer->update();
 
 		while (SDL_PollEvent(&mainEvent))

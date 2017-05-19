@@ -1,6 +1,5 @@
 #pragma once
 
-
 class gameVector2
 {
 public:

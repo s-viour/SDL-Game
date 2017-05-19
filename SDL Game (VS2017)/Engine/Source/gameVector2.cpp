@@ -1,3 +1,4 @@
+#include <SDL.h>
 #include "gameVector2.hpp"
 
 gameVector2::gameVector2(int xval, int yval)

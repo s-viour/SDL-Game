@@ -29,9 +29,13 @@
     <ClCompile Include="Engine\Source\gameImage.cpp" />
     <ClCompile Include="Engine\Source\gameInit.cpp" />
     <ClCompile Include="Engine\Source\gameRenderer.cpp" />
+    <ClCompile Include="Engine\Source\gameSprite.cpp" />
     <ClCompile Include="Engine\Source\gameVector2.cpp" />
     <ClCompile Include="Engine\Source\gameWindow.cpp" />
     <ClCompile Include="Game\SDLMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Include\gameSprite.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
