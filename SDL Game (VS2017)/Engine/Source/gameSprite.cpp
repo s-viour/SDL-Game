@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <iostream>
 
 #include "gameSprite.hpp"
 #include "gameVector2.hpp"
@@ -20,6 +21,10 @@ void gameSprite::render()
 		rect.w = i->getSize()->getX();
 		rect.h = i->getSize()->getY();
 		SDL_RenderCopy(i->getRenderer()->getRenderer(), i->getTexture(), NULL, &rect);
+		rect.x = NULL;
+		rect.y = NULL;
+		rect.w = NULL;
+		rect.h = NULL;
 	}
 }
 
@@ -28,11 +33,15 @@ void gameSprite::render(gameVector2* position)
 	if (active)
 	{
 		SDL_Rect rect;
-		rect.x = pos->getX();
-		rect.y = pos->getY();
+		rect.x = position->getX();
+		rect.y = position->getY();
 		rect.w = i->getSize()->getX();
 		rect.h = i->getSize()->getY();
 		SDL_RenderCopy(i->getRenderer()->getRenderer(), i->getTexture(), NULL, &rect);
+		rect.x = NULL;
+		rect.y = NULL;
+		rect.w = NULL;		//THERE'S NO WAY THIS COULD HAVE BEEN THE MEMORY LEAK BUT IT SEEMED TO FIX IT 
+		rect.h = NULL;
 	}
 }
 
@@ -54,4 +63,12 @@ void gameSprite::setActive()
 void gameSprite::setInactive()
 {
 	active = false;
+}
+
+gameSprite::~gameSprite()
+{
+	delete rend;
+	delete i;
+	delete pos;
+	active = NULL;
 }

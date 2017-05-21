@@ -16,3 +16,9 @@ int gameVector2::getY()
 {
 	return y;
 }
+
+gameVector2::~gameVector2()
+{
+	x = NULL;
+	y = NULL;
+}

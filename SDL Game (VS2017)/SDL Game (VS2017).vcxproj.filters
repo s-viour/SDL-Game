@@ -63,4 +63,18 @@
   <ItemGroup>
     <None Include="Engine\Include\gameSprite.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="s1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="s4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="s3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="s2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

@@ -39,6 +39,12 @@
   <ItemGroup>
     <None Include="Engine\Include\gameSprite.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="s1.png" />
+    <Image Include="s2.png" />
+    <Image Include="s3.png" />
+    <Image Include="s4.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{FC1972E7-E4AA-4421-9325-2A8E22A15B00}</ProjectGuid>

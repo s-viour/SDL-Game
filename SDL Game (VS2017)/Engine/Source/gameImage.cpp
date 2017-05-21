@@ -18,6 +18,7 @@ gameImage::gameImage(gameRenderer* renderer, char* path)
 
 gameImage::gameImage(gameRenderer* renderer)
 {
+	rend = renderer;
 	return;
 }
 
@@ -33,6 +34,8 @@ void gameImage::loadFromFile(char* file)
 	if (image != NULL)
 	{
 		texture = SDL_CreateTextureFromSurface(rend->getRenderer(), image);
+		SDL_FreeSurface(image);
+		image = nullptr;
 	}
 }
 

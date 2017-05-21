@@ -52,9 +52,8 @@ SDL_Surface* gameWindow::getWindowSurface()
 
 gameWindow::~gameWindow()
 {
+	SDL_DestroyWindow(window);
 	window = NULL;
 	windowName = NULL;
 	windowSize = NULL;
-
-	SDL_DestroyWindow(window);
 }

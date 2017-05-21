@@ -22,6 +22,8 @@ public:
 
 	void setInactive();
 
+	~gameSprite();
+
 private:
 	gameRenderer* rend;
 	gameImage* i;

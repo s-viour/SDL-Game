@@ -8,6 +8,8 @@ public:
 	int getX();
 
 	int getY();
+
+	~gameVector2();
 private:
 	int x;
 	int y;
