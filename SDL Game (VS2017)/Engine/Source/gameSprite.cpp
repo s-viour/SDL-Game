@@ -41,6 +41,11 @@ void gameSprite::setPosition(gameVector2* position)
 	pos = position;
 }
 
+gameVector2* gameSprite::getPosition()
+{
+	return new gameVector2(pos->getX(), pos->getY());
+}
+
 void gameSprite::setActive()
 {
 	active = true;

@@ -16,6 +16,8 @@ public:
 
 	void setPosition(gameVector2* position);
 
+	gameVector2* getPosition();
+
 	void setActive();
 
 	void setInactive();

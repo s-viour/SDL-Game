@@ -7,6 +7,7 @@
 #include "gameSprite.hpp"
 #include "gameRenderer.hpp"
 #include "gameVector2.hpp"
+#include "gameAnimator.hpp"
 
 #ifdef main
 #undef main
@@ -23,23 +24,33 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	gameWindow* window = new gameWindow("Main Window", new gameVector2(640, 512), true);
+	gameWindow window("Main Window", new gameVector2(640, 512), true);
 
-	gameRenderer* renderer = new gameRenderer(window);
+	gameRenderer renderer(&window);
 
-	gameImage* image = new gameImage(renderer, "./s1.png");
+	gameImage image(&renderer, "s1.png");
+	gameImage image2(&renderer, "s4.png");
 
-	gameSprite* sprite = new gameSprite(image);
-	sprite->setPosition(new gameVector2(20, 20));
-	sprite->setActive();
+	gameSprite sprite(&image);
+	gameSprite sprite2(&image2);
+	sprite.setPosition(new gameVector2(20, 20));
+	sprite2.setPosition(new gameVector2(140, 20));
+	sprite.setActive();
+	sprite2.setActive();
+
+	stateList states = { "one", "two" };
+	spriteList sprites = { sprite, sprite2 };
+	gameAnimator animator(states);
+	animator.addSprites("one", sprites);
 	
-	renderer->setColor(0, 150, 136, 255);
+	renderer.setColor(0, 150, 136, 255);
 
 	while (exit != true)
 	{
-		renderer->clear();
-		sprite->render();
-		renderer->update();
+		renderer.clear();
+		sprite.render();
+		sprite2.render();
+		renderer.update();
 
 		while (SDL_PollEvent(&mainEvent))
 		{

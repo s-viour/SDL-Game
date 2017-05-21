@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Include\gameAnimator.hpp" />
     <ClInclude Include="Engine\Include\gameImage.hpp" />
     <ClInclude Include="Engine\Include\gameInit.hpp" />
     <ClInclude Include="Engine\Include\gameRenderer.hpp" />
@@ -26,6 +27,7 @@
     <ClInclude Include="Engine\Include\gameWindow.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Source\gameAnimator.cpp" />
     <ClCompile Include="Engine\Source\gameImage.cpp" />
     <ClCompile Include="Engine\Source\gameInit.cpp" />
     <ClCompile Include="Engine\Source\gameRenderer.cpp" />

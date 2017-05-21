@@ -30,6 +30,9 @@
     <ClInclude Include="Engine\Include\gameInit.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Include\gameAnimator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Source\gameImage.cpp">
@@ -51,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Source\gameSprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Source\gameAnimator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
