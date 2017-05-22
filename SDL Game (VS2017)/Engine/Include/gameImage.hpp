@@ -15,9 +15,9 @@ public:
 
 	void loadFromFile(char* file);
 
-	gameVector2* getSize();
+	gameVector2 getSize();
 
-	gameRenderer* getRenderer();
+	SDL_Renderer* getRenderer();
 
 	~gameImage();
 private:

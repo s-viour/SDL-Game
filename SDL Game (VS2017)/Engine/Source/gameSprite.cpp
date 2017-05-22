@@ -18,9 +18,9 @@ void gameSprite::render()
 		SDL_Rect rect;
 		rect.x = pos->getX();
 		rect.y = pos->getY();
-		rect.w = i->getSize()->getX();
-		rect.h = i->getSize()->getY();
-		SDL_RenderCopy(i->getRenderer()->getRenderer(), i->getTexture(), NULL, &rect);
+		rect.w = i->getSize().getX();
+		rect.h = i->getSize().getY();
+		SDL_RenderCopy(i->getRenderer(), i->getTexture(), NULL, &rect);
 		rect.x = NULL;
 		rect.y = NULL;
 		rect.w = NULL;
@@ -35,12 +35,12 @@ void gameSprite::render(gameVector2* position)
 		SDL_Rect rect;
 		rect.x = position->getX();
 		rect.y = position->getY();
-		rect.w = i->getSize()->getX();
-		rect.h = i->getSize()->getY();
-		SDL_RenderCopy(i->getRenderer()->getRenderer(), i->getTexture(), NULL, &rect);
+		rect.w = i->getSize().getX();
+		rect.h = i->getSize().getY();
+		SDL_RenderCopy(i->getRenderer(), i->getTexture(), NULL, &rect);
 		rect.x = NULL;
 		rect.y = NULL;
-		rect.w = NULL;		//THERE'S NO WAY THIS COULD HAVE BEEN THE MEMORY LEAK BUT IT SEEMED TO FIX IT 
+		rect.w = NULL;		
 		rect.h = NULL;
 	}
 }

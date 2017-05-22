@@ -39,18 +39,20 @@ void gameImage::loadFromFile(char* file)
 	}
 }
 
-gameVector2* gameImage::getSize()
+gameVector2 gameImage::getSize()
 {
 	int w, h;
 
 	SDL_QueryTexture(texture, NULL, NULL, &w, &h);
 
-	return new gameVector2(w, h);
+	return gameVector2(w, h);		//THIS WAS THE MEMORY LEAK, DO NOT RETURN NEW OBJECTS EVER AGAIN, MATT | 
+									//original text: return new gameVector2(w, h) | and the function type was instead gameVector2*
+
 }
 
-gameRenderer* gameImage::getRenderer()
+SDL_Renderer* gameImage::getRenderer()
 {
-	return rend;
+	return rend->getRenderer();
 }
 
 gameImage::~gameImage()
