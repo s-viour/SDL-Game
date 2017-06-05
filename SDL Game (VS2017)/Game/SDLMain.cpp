@@ -33,25 +33,26 @@ int main(int argc, char* argv[])
 	gameSprite* sprite2 = new gameSprite(new gameImage(renderer, "./s2.png"));
 	gameSprite* sprite3 = new gameSprite(new gameImage(renderer, "./s3.png"));
 	gameSprite* sprite4 = new gameSprite(new gameImage(renderer, "./s4.png"));
-	sprite->setPosition(new gameVector2(20, 20));
-	sprite2->setPosition(new gameVector2(40, 20));
-	sprite3->setPosition(new gameVector2(60, 20));
-	sprite4->setPosition(new gameVector2(80, 20));
 	sprite->setActive();
 	sprite2->setActive();
 	sprite3->setActive();
 	sprite4->setActive();
 
+	
+	gameAnimator* animator = new gameAnimator({ "state1", "state2" });
+	animator->addSprites("state1", { sprite, sprite2 });		//omg it works
+	animator->addSprites("state2", { sprite3, sprite4 });
+
+	animator->setRenderPos(new gameVector2(40, 40));
+	animator->setState("state1");
+
 
 	while (exit != true)
 	{
 
-		//SDL_Delay(18);	//theres still a small memory leak but this simple delay slows it down to a point where it doesn't matter
+		SDL_Delay(18);	//theres still a small memory leak but this simple delay slows it down to a point where it doesn't matter
 		renderer->clear();
-		sprite->render();
-		sprite2->render();
-		sprite3->render();
-		sprite4->render();
+		animator->renderNext();
 		renderer->update();
 
 		while (SDL_PollEvent(&mainEvent))

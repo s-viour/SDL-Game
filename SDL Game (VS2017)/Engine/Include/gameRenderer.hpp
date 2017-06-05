@@ -20,5 +20,5 @@ public:
 	~gameRenderer();
 
 private:
-	SDL_Renderer* renderer;
+	SDL_Renderer *renderer;
 };
