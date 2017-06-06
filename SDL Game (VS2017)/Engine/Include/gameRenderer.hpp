@@ -1,3 +1,4 @@
+//gameRenderer | class for allowing SDL_Renderers to interact with the rest of the engine
 #pragma once
 #include <SDL.h>
 

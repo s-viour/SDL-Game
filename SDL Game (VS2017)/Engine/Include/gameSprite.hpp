@@ -1,3 +1,4 @@
+//gameSprite | class for actually rendering and moving images; builds upon gameImage
 #pragma once
 #include <SDL.h>
 

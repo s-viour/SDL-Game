@@ -1,3 +1,4 @@
+//gameImage | abstracted interface to allow SDL_Images to interact with the rest of the engine
 #pragma once
 #include <SDL.h>
 

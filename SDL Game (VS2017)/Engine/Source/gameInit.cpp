@@ -1,7 +1,7 @@
 #include "gameInit.hpp"
 
-bool gameInit()
-{
+bool gameInit()	//Initializes video and png images, may be updated later to include SDL_INIT_EVERYTHING
+{								//Returns true if everything works correctly
 	bool success = true;
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -17,7 +17,7 @@ bool gameInit()
 	return success;
 }
 
-void gameExit()
+void gameExit()		//Quits sdl and img
 {
 	SDL_Quit();
 	IMG_Quit();

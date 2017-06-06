@@ -1,3 +1,4 @@
+//gameAnimator | class for storing and rendering multiple sprites to create animation
 #pragma once
 #include <vector>
 

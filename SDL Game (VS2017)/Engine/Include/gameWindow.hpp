@@ -1,3 +1,4 @@
+//gameWindow | abstraction for SDL_Window; handles all window creation, destruction, and hiding
 #pragma once
 #include <SDL.h>
 

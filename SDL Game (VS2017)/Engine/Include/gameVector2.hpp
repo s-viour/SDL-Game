@@ -1,3 +1,4 @@
+//gameVector2 | just a regular vector2 class for storing x and y values
 #pragma once
 
 class gameVector2
